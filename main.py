@@ -1,7 +1,3 @@
-# This is the way
-# Author: pythontoday
-# YouTube: https://www.youtube.com/c/PythonToday/videos
-
 import random
 from time import sleep
 import requests
