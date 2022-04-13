@@ -26,7 +26,7 @@ headers = {
 # with open("index.html") as file:
 #     src = file.read()
 #
-# soup = BeautifulSoup(src, "lxml")
+# soup = BeautifulSoup(src, 'html.parser')
 # all_products_hrefs = soup.find_all(class_="mzr-tc-group-item-href")
 #
 # all_categories_dict = {}
@@ -62,7 +62,7 @@ for category_name, category_href in all_categories.items():
     with open(f"data/{count}_{category_name}.html") as file:
         src = file.read()
 
-    soup = BeautifulSoup(src, "lxml")
+    soup = BeautifulSoup(src, 'html.parser')
 
     # проверка страницы на наличие таблицы с продуктами
     alert_block = soup.find(class_="uk-alert-danger")
