@@ -91,8 +91,10 @@ for category_name, category_href in all_categories.items():
     product_info = []
     for item in products_data:
         product_tds = item.find_all("td")
-
-        title = product_tds[0].find("a").text
+        try:
+            title = product_tds[0].find("a").text
+        except AttributeError:
+            title = product_tds[0].get(class_="title")
         calories = product_tds[1].text
         proteins = product_tds[2].text
         fats = product_tds[3].text
