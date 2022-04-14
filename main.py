@@ -94,7 +94,9 @@ for category_name, category_href in all_categories.items():
         try:
             title = product_tds[0].find("a").text
         except AttributeError:
-            title = product_tds[0].get(class_="title")
+            string = product_tds[0].text
+            title = string.split(">", maxsplit=1)[1]
+
         calories = product_tds[1].text
         proteins = product_tds[2].text
         fats = product_tds[3].text
